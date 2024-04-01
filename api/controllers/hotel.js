@@ -55,3 +55,13 @@ export const getHotelById = async (req, res, next) => {
         res.status(500).send({ message: error.message });
     }
     };
+
+export const countByCity = async (req, res, next) => {
+    const cities= req.query.cities.split(",");
+    try {
+        const hotels = await Hotel.find({city: { $in: cities }});
+        res.status(200).send(hotels);
+    } catch (error) {
+        next(error);
+    }
+    };

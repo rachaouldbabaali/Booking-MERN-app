@@ -1,0 +1,4 @@
+{
+  "tslint.packageManager": "yarn",
+  "tslint.suppressWhileTypeErrorsPresent": true
+}
